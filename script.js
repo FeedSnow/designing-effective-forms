@@ -66,5 +66,12 @@ function getCountryCode(countryName) {
     // nasłuchiwania na zdarzenie kliknięcia myszką
     document.addEventListener('click', handleClick);
 
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            myForm.requestSubmit();
+        }
+    });
+
     fetchAndFillCountries();
 })()
